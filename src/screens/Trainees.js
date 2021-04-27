@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
-import { Spinner, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { TraineesContext } from "../contexts/TraineesContext";
 import { FiEdit, FiDelete, FiEye } from "react-icons/fi";
+import { CubeSpinner } from "react-spinners-kit";
 
 function Trainees() {
   const { loading, trainees, getTrainees } = useContext(TraineesContext);
@@ -13,7 +14,7 @@ function Trainees() {
 
   return (
     <section>
-      {loading && <Spinner animation="grow" />}
+      {loading && <CubeSpinner size={40} color="#686769" />}
       {trainees.length > 0 ? (
         <Table className="table-hover table-striped">
           <thead>
